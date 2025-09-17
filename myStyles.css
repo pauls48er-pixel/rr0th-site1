@@ -1,0 +1,297 @@
+/*base box model settings*/
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial;
+  color: black;
+}
+
+ul { list-style: none; padding-left: 0; }
+a { text-decoration: none; color: white; }
+p { font-size: 18px; margin: 0 5%; line-height: 1.5; }
+h3 { font-size: 22px; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* General page Layout */
+header {
+  background-color: #080401;
+  height: 120px;
+  border-bottom: 2px solid black;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+main { background-color: #333D48; }
+
+footer {
+  background-color: #080401;
+  border-top: 2px solid black;
+}
+
+.botnavflex { display: flex; justify-content: center; }
+.footertext { text-align: center; padding: 5px; margin: 1rem; color: #4261A4; }
+
+/* header */
+/* mobile */
+@media screen and (max-width: 800px) {
+  .topnav { position: fixed; right: 40px; top: 16px; }
+  .menubutton {
+    background-color: transparent;
+    color: #4261A4;
+    width: 80px; height: 80px; border: 0;
+  }
+  .topnav:hover .dropdownmenu { display: block; }
+}
+/* desktop */
+@media screen and (min-width: 801px) {
+  .topnav { position: fixed; right: 40px; top: 16px; }
+  .menubutton { display: none; }
+  .topnav ul { display: flex; }
+  .topnav li a {
+    margin-left: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    background-color: black;
+    color: #4261A4;
+    border: 2px solid black;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Mainpage */
+/* desktop */
+@media screen and (min-width: 801px) {
+  .attentionbox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* portrait */
+  .portrait {
+    width: 300px;     
+    margin: 40px auto 0;
+  }
+
+  /* intro text */
+  .intro {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .mainbox {
+    text-align: center;
+    padding-bottom: 100px;
+  }
+
+  /* on view */
+  .mainbox.highlight {
+    padding-top: 24px;
+    text-align: center;
+  }
+  .mainbox.highlight > h2 {
+    margin: 10px 0;
+    font-size: 36px;     
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .mainbox.highlight > .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .highlightpic {
+    width: 300px;       
+    max-width: 100%;
+  }
+
+  .highlight .flexcolumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .highlight .flexcolumn h3,
+  .highlight .flexcolumn p { margin: 0; }
+}
+
+/* highlight box */
+.mainbox.highlight.bgcolor2 {
+  background-color: #163F6D;
+  width: 100%;       
+  min-height: 100vh; 
+}
+.highlight, .gallery { padding-top: 30px; }
+
+/* Gallery Overview */
+.ampflex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.artlink {
+  height: 200px; min-width: 250px; width: 25%; margin: 2%;
+  border: 2px solid black; background-color: black;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+}
+.ampname { font-size: 30px; font-weight: normal; color: #4261A4; }
+
+/*mobile*/
+
+@media screen and (max-width: 800px) {
+  .artlink { width: 90%; margin: 5%; }
+}
+
+/* Gallery Detail */
+
+/* desktop */
+@media screen and (min-width: 801px) {
+  .artwork img {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .arttitle {
+    font-weight: normal;
+    margin: 12px 5% 8px;
+    line-height: 1.2;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .arttext {
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto 200px auto;
+    width: 50%;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 800px) {
+  .artwork img {
+    max-width: 90vw;
+    max-height: 70vh;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .arttitle {
+    font-weight: normal;
+    margin: 12px 5% 8px;
+    line-height: 1.2;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .arttext {
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto 120px auto;
+    width: 90%;
+  }
+}
+
+/* contact page */
+
+.contactform {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px black;
+  border-radius: 1%;
+  margin-bottom: 40px;
+  background-color: #080401ff;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 500px;
+}
+
+.contactform input[type=text] {
+  background-color: #4261a4;
+  border-radius: 2%;
+  padding: 20px;
+  border: 2px black;
+  width: 95%;
+  margin: 10px 0px;
+}
+
+.contactform input:nth-child(3) {
+  height: 200px;
+}
+
+.contactform input[type=submit] {
+  background-color: #4261a4;
+  border-radius: 1%;
+  padding: 20px;
+  font-weight: bold;
+  border: 2px black;
+}
+
+/*ich check das nicht? will die efekte nicht wie bekomm ichb das weg?*/
+
+.contactform input[type=submit]:hover {
+  box-shadow: #E0AA60ff 0px 0px 0px;
+}
+
+.mainboxflex {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* footer */
+.newsletter { border-radius: 4px; text-align: center; }
+.newsletter input[type=text] {
+  background-color: white;
+  border-radius: 4px;
+  padding: 20px;
+  border: 2px solid white;
+}
+.newsletter input[type=submit] {
+  background-color: white;
+  border-radius: 4px;
+  padding: 20px;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+/* actionbutton */
+.actionbutton {
+  font-size: 25px;
+  text-align: center;
+  font-weight: normal;
+  padding: 15px;
+  background-color: black;
+  color: #4261A4;
+  border: 2px solid black;
+  border-radius: 20%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlight .actionbutton { margin-top: 16px; }
